@@ -1,5 +1,7 @@
 import { ConvexError, v } from "convex/values";
 import { mutation, query } from "./_generated/server";
+
+// Get all todos
 export const getTodos = query({
     handler: async (ctx) => {
         const todos = await ctx.db.query("todos").order("desc").collect()
@@ -7,7 +9,7 @@ export const getTodos = query({
     }
 })
 
-
+// Add a new todo
 export const addTodo = mutation({
     args: { text: v.string() },
     handler: async (ctx, args) => {
@@ -18,6 +20,7 @@ export const addTodo = mutation({
     }
 })
 
+// Toggle a todo's completion status
 export const toggleTodo = mutation({
     args: { id: v.id("todos") },
     handler: async (ctx, args) => {
@@ -29,6 +32,7 @@ export const toggleTodo = mutation({
     }
 })
 
+// Update a todo's text
 export const updateTodo = mutation({
     args: { id: v.id("todos"), text: v.string() },
     handler: async (convexToJson, args) => {
@@ -38,6 +42,7 @@ export const updateTodo = mutation({
     },
 })
 
+// Delete a todo
 export const deleteTodo = mutation({
     args: { id: v.id("todos") },
     handler: async (ctx, args) => {
@@ -48,6 +53,7 @@ export const deleteTodo = mutation({
 })
 
 
+// Clear all todos
 export const clearAllTodos = mutation({
     handler: async (ctx) => {
         const todos = await ctx.db.query("todos").collect();
