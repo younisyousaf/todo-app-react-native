@@ -1,4 +1,4 @@
-# Welcome to your Expo app 👋
+# Welcome to Todo Expo app 👋
 
 This is an Expo project created with create-expo-app.
 
