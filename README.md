@@ -1,4 +1,4 @@
-# Welcome to your Expo app 👋
+# Welcome to Todo Expo app 👋
 
 This is an Expo project created with create-expo-app.
 
@@ -22,9 +22,8 @@ To connect with Convex, ensure the following environment variables are set in yo
 
 ```bash
 EXPO_PUBLIC_CONVEX_URL
-```
-
 CONVEX_DEPLOYMENT
+```
 
 Then, run:
 
